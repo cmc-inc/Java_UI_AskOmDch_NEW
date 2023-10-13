@@ -32,6 +32,15 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    public HomePage load() {
+        load("/");
+        return this;
+    }
+
+    public String getTitle() {
+        return driver.getTitle();
+    }
+
     public String getPageHeaderFontWeight() {
         return driver.findElement(pageHeaderText).getCssValue("font-weight");
     }
@@ -99,7 +108,7 @@ public class HomePage extends BasePage {
         return new ContactUs(driver);
     }
 
-    public String getArticleImageOneHrefAttr() {
+    public String getArticleImageOneSrcAttr() {
         return driver.findElement(articleImageOne).getAttribute("src");
     }
 
