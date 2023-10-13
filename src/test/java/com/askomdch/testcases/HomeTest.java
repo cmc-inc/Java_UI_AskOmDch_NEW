@@ -194,6 +194,5 @@ public class HomeTest extends BaseTest {
         HomePage homePage = new HomePage(getDriver());
         Assert.assertEquals(homePage.getFeaturedProductsText(), "Featured Products");
         Assert.assertTrue(homePage.featuredProductsIsDisplayed());
-        System.out.println("test");
     }
 }
