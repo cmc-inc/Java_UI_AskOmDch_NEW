@@ -39,4 +39,13 @@ public class CheckoutTest extends BaseTest {
         String actualResult = checkoutPage.addToCart(Integer.parseInt(products[0])).getSubTotalAsGuestUser();
         Assert.assertEquals(actualResult, products[1]);
     }
+
+    @Test
+    public void testPageTitle() throws IOException {
+        CheckoutPage checkoutPage = new CheckoutPage(getDriver());
+        Product product = new Product(1196);
+        checkoutPage.addToCart(product.getId());
+        String actualResult = checkoutPage.load().getPageTitle();
+        Assert.assertEquals(actualResult, "Checkout – AskOmDch");
+    }
 }

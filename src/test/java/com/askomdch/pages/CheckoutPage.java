@@ -4,7 +4,6 @@ import com.askomdch.api.AddToCartApi;
 import com.askomdch.base.BasePage;
 import com.askomdch.objects.Product;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends BasePage {
@@ -15,8 +14,13 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
-    public void load() {
+    public CheckoutPage load() {
         load("/checkout");
+        return this;
+    }
+
+    public String getPageTitle() {
+        return driver.getTitle();
     }
 
     public String getProductName(Product product) {
